@@ -26,9 +26,11 @@ class AppTheme {
       textTheme: TextTheme(
           displayLarge: AppTextStyles.headline1,
           bodyMedium: AppTextStyles.mediumText,
-          bodySmall: AppTextStyles.smallText),
+          bodySmall: AppTextStyles.smallText,
+          // labelMedium: AppTextStyles.labelTextMedium,
+          titleMedium: AppTextStyles.subtitleText),
       buttonTheme: ButtonThemeData(
-        buttonColor: ColorPalette.colorPrimary,
+        buttonColor: ColorPalette.colorLight,
         textTheme: ButtonTextTheme.primary,
       ),
       // Adicione mais personalizações para o tema escuro

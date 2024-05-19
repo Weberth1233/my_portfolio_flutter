@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:my_portifolio/src/components/button_component.dart';
+import 'package:my_portifolio/src/theme/color_palette.dart';
 import 'package:my_portifolio/src/widgets/home/widgets/circular_image.dart';
 
 class Home extends StatefulWidget {
@@ -30,7 +32,28 @@ class _HomeState extends State<Home> {
             style: Theme.of(context).textTheme.bodyMedium,
             textAlign: TextAlign.center,
           ),
-        ),
+        ).paddingOnly(bottom: 20),
+        SizedBox(
+            width: 656,
+            child: Wrap(
+              spacing: 20,
+              runSpacing: 29,
+              alignment: WrapAlignment.center,
+              children: [
+                ButtonComponent(
+                  text: 'Get In Touch',
+                  action: () {},
+                  colorButton: ColorPalette.colorLight,
+                  colorText: ColorPalette.colorTextButtonDark,
+                ),
+                ButtonComponent(
+                  text: 'Download CV',
+                  action: () {},
+                  colorButton: Colors.transparent,
+                  colorText: ColorPalette.colorLight,
+                ),
+              ],
+            )).paddingOnly(bottom: 20),
       ],
     );
   }

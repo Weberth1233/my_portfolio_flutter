@@ -21,6 +21,15 @@ class Responsive extends StatelessWidget {
     return MediaQuery.of(context).size.width >= 1200;
   }
 
+  static EdgeInsets getPadding(BuildContext context) {
+    return EdgeInsets.symmetric(
+        horizontal: isDesktop(context)
+            ? 319.17
+            : isMobile(context)
+                ? 10
+                : 50);
+  }
+
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
