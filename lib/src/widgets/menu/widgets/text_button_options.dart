@@ -1,21 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:my_portifolio/src/utils/responsive.dart';
+
+import '../../../utils/general_settings.dart';
 
 class TextButtonOptions extends StatelessWidget {
   final String text;
-  final VoidCallback action;
+  final GlobalKey myKey;
 
-  const TextButtonOptions(
-      {super.key, required this.text, required this.action});
+  const TextButtonOptions({
+    super.key,
+    required this.text,
+    required this.myKey,
+  });
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: action,
+      onPressed: () {
+        scrollSectionSimple(myKey);
+      },
       child: Text(
         text,
-        style: Theme.of(context).textTheme.bodySmall,
+        style: Responsive.isMobile(context)
+            ? Theme.of(context).textTheme.bodyLarge
+            : Theme.of(context).textTheme.bodySmall,
       ),
-    ).paddingOnly(left: 71);
+    ).paddingOnly(left: Responsive.isDesktop(context) ? 71 : 0);
   }
 }

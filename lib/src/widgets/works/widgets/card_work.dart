@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:my_portifolio/src/theme/color_palette.dart';
 import 'package:my_portifolio/src/utils/responsive.dart';
@@ -30,7 +31,10 @@ class CardWork extends StatelessWidget {
                 child: Wrap(
                   spacing: 5,
                   children: [
-                    const Text('Logo'),
+                    Icon(
+                      FontAwesomeIcons.businessTime,
+                      color: ColorPalette.colorOrangeGradiente,
+                    ).paddingOnly(right: 10),
                     Text(
                       company,
                       style: Theme.of(context).textTheme.bodyMedium!.copyWith(

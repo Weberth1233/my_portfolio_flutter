@@ -1,44 +1,86 @@
 import 'package:flutter/material.dart';
-import 'package:my_portifolio/src/utils/responsive.dart';
 import 'package:my_portifolio/src/widgets/contact/widget_contact.dart';
 import 'package:my_portifolio/src/widgets/experience/widget_experience.dart';
 import 'package:my_portifolio/src/widgets/global_scaffold.dart';
+import 'package:my_portifolio/src/widgets/projects/widget_projects.dart';
 import 'package:my_portifolio/src/widgets/works/widget_works.dart';
-import '../widgets/home/widget_home.dart';
+import 'package:my_portifolio/src/widgets/home/widget_home.dart';
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+  const MyHomePage({Key? key}) : super(key: key);
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  _MyHomePageState createState() => _MyHomePageState();
 }
 
+final keyHome = GlobalKey();
+final keyExperience = GlobalKey();
+final keyProjects = GlobalKey();
+final keyWorks = GlobalKey();
+final keyContact = GlobalKey();
+
+final List<GlobalKey> keys = [
+  keyHome,
+  keyExperience,
+  keyProjects,
+  keyWorks,
+  keyContact
+];
+final ScrollController _scrollController = ScrollController();
+
 class _MyHomePageState extends State<MyHomePage> {
+  void scrollToSection(GlobalKey key) {
+    Scrollable.ensureVisible(
+      key.currentContext!,
+      duration: const Duration(seconds: 1),
+      curve: Curves.easeInOut,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    return const GlobalScaffold(
+    return GlobalScaffold(
+      controller: _scrollController,
+      keyHome: keyHome,
+      keyExperience: keyExperience,
+      keyProjects: keyProjects,
+      keyWorks: keyWorks,
+      keyContact: keyContact,
       body: SafeArea(
         child: SingleChildScrollView(
-          padding: EdgeInsets.symmetric(
-            horizontal: 0,
-          ),
+          controller: _scrollController,
           child: Column(
-            children: <Widget>[
+            children: [
               Padding(
-                padding: EdgeInsets.only(top: 97.82),
+                padding: const EdgeInsets.only(top: 90),
                 child: Center(
-                  child: Home(),
+                  child: Home(
+                    key: keyHome,
+                    keyContact: keyContact,
+                  ),
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 88),
-                child: Experience(),
+                padding: const EdgeInsets.only(top: 90),
+                child: Experience(
+                  key: keyExperience,
+                ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 88),
-                child: Works(),
+                padding: const EdgeInsets.only(top: 90),
+                child: Projects(
+                  key: keyProjects,
+                ),
               ),
-              Contact(),
+              Padding(
+                padding: const EdgeInsets.only(top: 90),
+                child: Works(
+                  key: keyWorks,
+                ),
+              ),
+              Contact(
+                key: keyContact,
+              ),
             ],
           ),
         ),

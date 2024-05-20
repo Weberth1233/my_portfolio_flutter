@@ -16,7 +16,6 @@ class _ContactState extends State<Contact> {
   Widget build(BuildContext context) {
     return Container(
       padding: Responsive.getPadding(context),
-      height: 418.76,
       width: MediaQuery.of(context).size.width,
       color: ColorPalette.colorAppBar,
       child: Column(
@@ -27,13 +26,14 @@ class _ContactState extends State<Contact> {
             style: Theme.of(context).textTheme.titleMedium,
           ).paddingOnly(top: 83.73, bottom: 34.37),
           Text(
-            "Seasoned Full Stack Software Engineer with over 8 years of hands-on experience in designing and implementing robust, scalable, and innovative web solutions. Adept at leveraging acomprehensive skill set encompassing front-end and back-end technologies",
+            'Sou Weberth Erik, recém-formado em Sistemas de Informação pela UNITINS, especializado em desenvolvimento móvel com Flutter e com experiência em Flutter, Laravel e Django. Trabalhei em projetos significativos, como o UNITINSRECICLA, e atualmente sou desenvolvedor FullStack(Django/Flutter). E estou sempre em busca de novos desafios no desenvolvimento de software.',
             style: Theme.of(context).textTheme.bodySmall,
           ),
           const SizedBox(
             height: 10,
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Icon(
                 Icons.email,
@@ -49,16 +49,33 @@ class _ContactState extends State<Contact> {
             ],
           ).paddingOnly(bottom: 41.25),
           Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Icon(
-                FontAwesomeIcons.instagram,
-                color: ColorPalette.colorLight,
-              ).paddingOnly(right: 10),
-              Icon(
-                FontAwesomeIcons.linkedin,
-                color: ColorPalette.colorLight,
-              ).paddingOnly(right: 10),
+              IconButton(
+                icon: Icon(
+                  FontAwesomeIcons.instagram,
+                  color: ColorPalette.colorLight,
+                ),
+                onPressed: () {},
+              ),
+              IconButton(
+                icon: Icon(
+                  FontAwesomeIcons.linkedin,
+                  color: ColorPalette.colorLight,
+                ),
+                onPressed: () {},
+              ),
             ],
+          ),
+          TextButton(
+            onPressed: () {},
+            child: Text(
+              'Visualizar template no FIGMA - Todos os direitos',
+              style: Theme.of(context)
+                  .textTheme
+                  .bodySmall!
+                  .copyWith(color: Colors.green),
+            ),
           ),
         ],
       ),

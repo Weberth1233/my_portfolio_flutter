@@ -3,37 +3,42 @@ import 'package:flutter/material.dart';
 import 'text_button_options.dart';
 
 class OptionMenu extends StatelessWidget {
-  const OptionMenu({super.key});
+  final List<TextButtonOptions> textButtonOptions;
+  const OptionMenu({super.key, required this.textButtonOptions});
 
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: [
-        TextButtonOptions(
-          text: 'Home',
-          action: () {
-            print('cliquei');
-          },
-        ),
-        TextButtonOptions(
-          text: 'Projetos',
-          action: () {
-            print('cliquei');
-          },
-        ),
-        TextButtonOptions(
-          text: 'Experience',
-          action: () {
-            print('cliquei');
-          },
-        ),
-        TextButtonOptions(
-          text: 'Contatos',
-          action: () {
-            print('cliquei');
-          },
-        ),
-      ],
-    );
+        children: List.generate(
+      textButtonOptions.length,
+      (index) {
+        return TextButtonOptions(
+          text: textButtonOptions[index].text,
+          myKey: textButtonOptions[index].myKey,
+        );
+      },
+    )
+        // TextButtonOptions(
+        //   text: "Home",
+        //   controller: controller,
+        //   paddingLeft: 71,
+        // ),
+        // TextButtonOptions(
+        //   text: "Projetos",
+        //   controller: controller,
+        //   paddingLeft: 71,
+        // ),
+        // TextButtonOptions(
+        //   text: "Experience",
+        //   controller: controller,
+        //   paddingLeft: 71,
+        // ),
+        // TextButtonOptions(
+        //   text: "Contatos",
+        //   controller: controller,
+        //   paddingLeft: 71,
+        // ),
+
+        );
   }
 }

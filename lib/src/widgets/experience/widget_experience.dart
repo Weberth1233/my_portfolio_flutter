@@ -61,7 +61,7 @@ class Experience extends StatelessWidget {
               pathImage: 'assets/images/github.png',
               width: 50,
               height: 50,
-              color: ColorPalette.colorTextButtonDark,
+              color: ColorPalette.colorLight,
             ),
 
             // Image.asset('assets/images/django.png'),
