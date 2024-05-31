@@ -31,7 +31,7 @@ class _HomeState extends State<Home> {
                     ? Theme.of(context)
                         .textTheme
                         .displayLarge!
-                        .copyWith(fontSize: 50)
+                        .copyWith(fontSize: 45)
                     : Theme.of(context).textTheme.displayLarge,
                 children: <TextSpan>[
                   TextSpan(
@@ -63,16 +63,12 @@ class _HomeState extends State<Home> {
                   action: () {
                     scrollSectionSimple(keyContact);
                   },
-                  colorButton: ColorPalette.colorLight,
-                  colorText: ColorPalette.colorTextButtonDark,
                 ),
                 ButtonComponent(
                   text: 'Download CV',
                   action: () {
                     downloadCV();
                   }, //downloadCV,
-                  colorButton: Colors.transparent,
-                  colorText: ColorPalette.colorLight,
                 ),
               ],
             )).paddingOnly(bottom: 20),

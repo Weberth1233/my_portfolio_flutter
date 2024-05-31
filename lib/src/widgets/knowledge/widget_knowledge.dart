@@ -20,7 +20,7 @@ class Experience extends StatelessWidget {
         Wrap(
           spacing: 30,
           runSpacing: 20,
-          children: <Widget>[
+          children: <ContainerShapeDecorationComponent>[
             ContainerShapeDecorationComponent(
               pathImage: 'assets/images/django.png',
               width: 40,
@@ -63,14 +63,6 @@ class Experience extends StatelessWidget {
               height: 40,
               color: ColorPalette.colorLight,
             ),
-
-            // Image.asset('assets/images/django.png'),
-            // Image.asset('assets/images/java.png'),
-            // Image.asset('assets/images/flutter.png'),
-            // Image.asset('assets/images/github.png'),
-            // Image.asset('assets/images/html.jpg'),
-            // Image.asset('assets/images/css.png'),
-            // Image.asset('assets/images/javascript.png'),
           ],
         ),
       ],

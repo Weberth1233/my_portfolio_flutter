@@ -33,7 +33,6 @@ class CardProject extends StatelessWidget {
               topLeft: Radius.circular(20),
               topRight: Radius.circular(20),
             ),
-            color: ColorPalette.colorPrimary,
             image: DecorationImage(
               image: AssetImage(pathImage),
               fit: BoxFit
@@ -44,7 +43,7 @@ class CardProject extends StatelessWidget {
         Container(
           width: Responsive.getSizeCard(context),
           decoration: BoxDecoration(
-            color: ColorPalette.colorAppBar,
+            color: Theme.of(context).cardColor,
             borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(20),
               bottomRight: Radius.circular(20),
@@ -62,12 +61,16 @@ class CardProject extends StatelessWidget {
                     Responsive.isDesktop(context)
                         ? 'Clique nos links para saber mais...'
                         : 'Role para o lado para ver mais...',
-                    style: Theme.of(context).textTheme.bodySmall),
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodySmall!
+                        .copyWith(fontStyle: FontStyle.italic, fontSize: 10)),
                 Text(
                   text,
-                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                      color: ColorPalette.colorLight,
-                      fontWeight: FontWeight.w600),
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyMedium!
+                      .copyWith(fontWeight: FontWeight.w500),
                 ),
                 actionLink == null
                     ? Row(

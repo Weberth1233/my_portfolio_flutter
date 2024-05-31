@@ -35,3 +35,7 @@ Future<void> launchURL(String url) async {
     throw 'Could not launch $url';
   }
 }
+
+bool isDarkModeEnabled(BuildContext context) {
+  return MediaQuery.of(context).platformBrightness == Brightness.dark;
+}

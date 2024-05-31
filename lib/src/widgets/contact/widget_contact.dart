@@ -6,8 +6,11 @@ import 'package:my_portifolio/src/utils/responsive.dart';
 import 'package:my_portifolio/src/utils/utils_methods.dart';
 import 'package:my_portifolio/src/widgets/contact/widgets/row_icon_text.dart';
 
+import '../../controllers/controller_theme.dart';
+
 class Contact extends StatefulWidget {
-  const Contact({super.key});
+  final ControllerTheme controllerTheme;
+  const Contact({super.key, required this.controllerTheme});
 
   @override
   State<Contact> createState() => _ContactState();
@@ -19,7 +22,9 @@ class _ContactState extends State<Contact> {
     return Container(
       padding: Responsive.getPadding(context),
       width: MediaQuery.of(context).size.width,
-      color: ColorPalette.colorAppBar,
+      color: widget.controllerTheme.themeLight.value
+          ? ColorPaletteLight.colorFooter
+          : ColorPalette.colorFooter,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[

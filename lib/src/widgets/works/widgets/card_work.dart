@@ -36,20 +36,14 @@ class CardWork extends StatelessWidget {
                   Text(
                     company,
                     style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                          color: ColorPalette.colorLight,
                           fontWeight: FontWeight.bold,
                         ),
                   ),
                 ],
               ),
             ),
-            Text(
-              durationMothYear,
-              style: Theme.of(context)
-                  .textTheme
-                  .bodySmall!
-                  .copyWith(color: ColorPalette.colorTextSecondary),
-            )
+            Text(durationMothYear,
+                style: Theme.of(context).textTheme.bodySmall!)
           ],
         ).paddingOnly(bottom: 23),
         Text(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_portifolio/src/theme/color_palette.dart';
-
+import 'package:my_portifolio/src/components/icon_button_component.dart';
+import '../controllers/controller_theme.dart';
 import '../utils/responsive.dart';
 import 'menu/widget_custom_menu.dart';
 import 'menu/widgets/text_button_options.dart';
@@ -13,6 +13,7 @@ class GlobalScaffold extends StatelessWidget {
   final GlobalKey keyProjects;
   final GlobalKey keyWorks;
   final GlobalKey keyContact;
+  final ControllerTheme controllerTheme;
 
   const GlobalScaffold({
     super.key,
@@ -23,25 +24,26 @@ class GlobalScaffold extends StatelessWidget {
     required this.keyProjects,
     required this.keyWorks,
     required this.keyContact,
+    required this.controllerTheme,
   });
 
   @override
   Widget build(BuildContext context) {
     List<TextButtonOptions> textButtonOptions = [
       TextButtonOptions(
-        text: "Home",
+        text: 'Home',
         myKey: keyHome,
       ),
       TextButtonOptions(
-        text: "Projetos",
+        text: 'Projetos',
         myKey: keyProjects,
       ),
       TextButtonOptions(
-        text: "Experiências",
-        myKey: keyWorks,
+        text: 'Experiências',
+        myKey: keyExperience, // Corrigido para keyExperience
       ),
       TextButtonOptions(
-        text: "Contatos",
+        text: 'Contatos',
         myKey: keyContact,
       ),
     ];
@@ -51,17 +53,27 @@ class GlobalScaffold extends StatelessWidget {
           ? AppBar(
               title: Text(
                 'Portifolio Weberth',
-                style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                    color: ColorPalette.colorLight,
-                    fontWeight: FontWeight.w600),
+                style: Theme.of(context)
+                    .textTheme
+                    .bodySmall!
+                    .copyWith(fontWeight: FontWeight.w600),
               ),
               centerTitle: true,
+              actions: [
+                IconButtonComponent(
+                  icon: controllerTheme.themeLight.value
+                      ? Icons.sunny
+                      : Icons.nightlight_round,
+                  action: controllerTheme.changeTheme, // Usando arrow function
+                ),
+              ],
             )
           : PreferredSize(
               preferredSize: const Size(double.infinity, 400),
               child: MyCustomMenuDesktop(
                 controller: controller,
                 textButtonOptions: textButtonOptions,
+                controllerTheme: controllerTheme,
               ),
             ),
       drawer: Drawer(
@@ -69,15 +81,12 @@ class GlobalScaffold extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 60),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: List.generate(
-              textButtonOptions.length,
-              (index) {
-                return TextButtonOptions(
-                  text: textButtonOptions[index].text,
-                  myKey: textButtonOptions[index].myKey,
-                );
-              },
-            ),
+            children: textButtonOptions.map((option) {
+              return TextButtonOptions(
+                text: option.text,
+                myKey: option.myKey,
+              );
+            }).toList(), // Usando map ao invés de List.generate
           ),
         ),
       ),

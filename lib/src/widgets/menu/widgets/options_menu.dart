@@ -17,28 +17,6 @@ class OptionMenu extends StatelessWidget {
           myKey: textButtonOptions[index].myKey,
         );
       },
-    )
-        // TextButtonOptions(
-        //   text: "Home",
-        //   controller: controller,
-        //   paddingLeft: 71,
-        // ),
-        // TextButtonOptions(
-        //   text: "Projetos",
-        //   controller: controller,
-        //   paddingLeft: 71,
-        // ),
-        // TextButtonOptions(
-        //   text: "Experience",
-        //   controller: controller,
-        //   paddingLeft: 71,
-        // ),
-        // TextButtonOptions(
-        //   text: "Contatos",
-        //   controller: controller,
-        //   paddingLeft: 71,
-        // ),
-
-        );
+    ));
   }
 }

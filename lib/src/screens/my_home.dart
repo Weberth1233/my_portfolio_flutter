@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:my_portifolio/src/widgets/contact/widget_contact.dart';
-import 'package:my_portifolio/src/widgets/experience/widget_experience.dart';
+import 'package:my_portifolio/src/widgets/knowledge/widget_knowledge.dart';
 import 'package:my_portifolio/src/widgets/global_scaffold.dart';
 import 'package:my_portifolio/src/widgets/projects/widget_projects.dart';
 import 'package:my_portifolio/src/widgets/works/widget_works.dart';
 import 'package:my_portifolio/src/widgets/home/widget_home.dart';
 
+import '../controllers/controller_theme.dart';
+
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
+  final ControllerTheme controllerTheme;
+
+  const MyHomePage({super.key, required this.controllerTheme});
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +22,7 @@ class MyHomePage extends StatelessWidget {
       keyProjects: keyProjects,
       keyWorks: keyWorks,
       keyContact: keyContact,
+      controllerTheme: controllerTheme,
       body: SafeArea(
         child: SingleChildScrollView(
           controller: _scrollController,
@@ -52,6 +57,7 @@ class MyHomePage extends StatelessWidget {
               ),
               Contact(
                 key: keyContact,
+                controllerTheme: controllerTheme,
               ),
             ],
           ),

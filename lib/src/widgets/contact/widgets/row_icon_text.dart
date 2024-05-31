@@ -39,13 +39,7 @@ class RowIconText extends StatelessWidget {
               iconData,
               color: ColorPalette.colorOrangeGradiente,
             ).paddingOnly(right: 10),
-            Text(
-              text,
-              style: Theme.of(context)
-                  .textTheme
-                  .bodySmall!
-                  .copyWith(color: ColorPalette.colorLight),
-            ),
+            Text(text, style: Theme.of(context).textTheme.bodySmall),
           ],
         ).paddingOnly(bottom: 10),
       ),

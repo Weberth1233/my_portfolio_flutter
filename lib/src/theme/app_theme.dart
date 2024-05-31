@@ -3,38 +3,68 @@ import 'package:my_portifolio/src/theme/color_palette.dart';
 import 'text_styles.dart';
 
 class AppTheme {
-  static ThemeData get lightTheme {
-    return ThemeData(
-      primaryColor: ColorPalette.colorPrimary,
-      textTheme: TextTheme(
-        displayLarge: AppTextStyles.headline1,
-        bodyMedium: AppTextStyles.mediumText,
-        bodySmall: AppTextStyles.smallText,
-      ),
+  final bool isLight;
+  late AppTextStyles appTextStyle;
 
-      buttonTheme: ButtonThemeData(
-        buttonColor: ColorPalette.colorLight,
-        textTheme: ButtonTextTheme.primary,
-      ),
-      // Adicione mais personalizações conforme necessário
-    );
+  AppTheme({this.isLight = false}) {
+    appTextStyle = AppTextStyles(isLightTheme: isLight);
   }
 
-  static ThemeData get darkTheme {
+  ThemeData get lightTheme {
     return ThemeData(
-      brightness: Brightness.dark,
-      primaryColor: ColorPalette.colorPrimary,
-      textTheme: TextTheme(
-          displayLarge: AppTextStyles.headline1,
-          bodyMedium: AppTextStyles.mediumText,
-          bodySmall: AppTextStyles.smallText,
-          // labelMedium: AppTextStyles.labelTextMedium,
-          titleMedium: AppTextStyles.subtitleText),
-      buttonTheme: ButtonThemeData(
-        buttonColor: ColorPalette.colorLight,
-        textTheme: ButtonTextTheme.primary,
-      ),
-      // Adicione mais personalizações para o tema escuro
-    );
+        brightness: Brightness.light,
+        scaffoldBackgroundColor: Colors.white,
+        primaryColor: ColorPaletteLight.colorPrimary,
+        cardColor: ColorPaletteLight.colorCard,
+        appBarTheme: AppBarTheme(
+          backgroundColor: ColorPaletteLight.colorAppBar,
+        ),
+        textTheme: TextTheme(
+            displayLarge: appTextStyle.headline1,
+            bodyMedium: appTextStyle.mediumText,
+            bodySmall: appTextStyle.smallText,
+            titleMedium: appTextStyle.subtitleText),
+        outlinedButtonTheme: OutlinedButtonThemeData(
+          style: ButtonStyle(
+            backgroundColor: WidgetStateProperty.all<Color>(
+                ColorPaletteLight.colorButton), // Cor de fundo
+            foregroundColor: WidgetStateProperty.all<Color>(
+                ColorPaletteLight.colorTextButton),
+            side: WidgetStateProperty.all<BorderSide>(
+              BorderSide(color: ColorPaletteLight.colorPrimary), // Cor da borda
+            ),
+          ),
+        ) // Cor do texto),
+        // Adicione mais personalizações conforme necessário
+        );
+  }
+
+  ThemeData get darkTheme {
+    return ThemeData(
+        brightness: Brightness.dark,
+        primaryColor: ColorPalette.colorPrimary,
+        cardColor: ColorPalette.colorCard,
+        appBarTheme: AppBarTheme(
+          backgroundColor: ColorPalette.colorAppBar,
+        ),
+        textTheme: TextTheme(
+            displayLarge: appTextStyle.headline1,
+            bodyMedium: appTextStyle.mediumText,
+            bodySmall: appTextStyle.smallText,
+            // labelMedium: AppTextStyles.labelTextMedium,
+            titleMedium: appTextStyle.subtitleText),
+        outlinedButtonTheme: OutlinedButtonThemeData(
+          style: ButtonStyle(
+            backgroundColor: WidgetStateProperty.all<Color>(
+                ColorPalette.colorButton), // Cor de fundo
+            foregroundColor:
+                WidgetStateProperty.all<Color>(ColorPalette.colorTextButton),
+            side: WidgetStateProperty.all<BorderSide>(
+              BorderSide(color: ColorPalette.colorLight), // Cor da borda
+            ),
+          ),
+        )
+        // Adicione mais personalizações para o tema escuro
+        );
   }
 }
