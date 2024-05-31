@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:my_portifolio/src/theme/color_palette.dart';
 
 class IconButtonComponent extends StatelessWidget {
   final IconData icon;
@@ -16,6 +17,7 @@ class IconButtonComponent extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       icon: Icon(icon),
+      color: ColorPalette.colorOrangeGradiente,
       onPressed: action,
     ).paddingOnly(right: padding);
   }

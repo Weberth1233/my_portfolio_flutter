@@ -9,6 +9,7 @@ class AppTheme {
       textTheme: TextTheme(
         displayLarge: AppTextStyles.headline1,
         bodyMedium: AppTextStyles.mediumText,
+        bodySmall: AppTextStyles.smallText,
       ),
 
       buttonTheme: ButtonThemeData(

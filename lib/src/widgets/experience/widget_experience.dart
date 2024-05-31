@@ -11,7 +11,7 @@ class Experience extends StatelessWidget {
     return Column(
       children: [
         Text(
-          'TECNOLOGIAS',
+          'CONHECIMENTOS',
           style: Theme.of(context).textTheme.bodyMedium,
         ),
         const SizedBox(
@@ -23,44 +23,44 @@ class Experience extends StatelessWidget {
           children: <Widget>[
             ContainerShapeDecorationComponent(
               pathImage: 'assets/images/django.png',
-              width: 50,
-              height: 50,
-              color: ColorPalette.colorTextButtonDark,
+              width: 40,
+              height: 40,
+              color: ColorPalette.colorLight,
             ),
             ContainerShapeDecorationComponent(
               pathImage: 'assets/images/java.png',
-              width: 50,
-              height: 50,
+              width: 40,
+              height: 40,
               color: ColorPalette.colorTextButtonDark,
             ),
             ContainerShapeDecorationComponent(
               pathImage: 'assets/images/flutter.png',
-              width: 50,
-              height: 50,
+              width: 40,
+              height: 40,
               color: ColorPalette.colorTextButtonDark,
             ),
             ContainerShapeDecorationComponent(
               pathImage: 'assets/images/html.jpg',
-              width: 50,
-              height: 50,
+              width: 40,
+              height: 40,
               color: ColorPalette.colorTextButtonDark,
             ),
             ContainerShapeDecorationComponent(
               pathImage: 'assets/images/css.png',
-              width: 50,
-              height: 50,
+              width: 40,
+              height: 40,
               color: ColorPalette.colorTextButtonDark,
             ),
             ContainerShapeDecorationComponent(
               pathImage: 'assets/images/javascript.png',
-              width: 50,
-              height: 50,
+              width: 40,
+              height: 40,
               color: ColorPalette.colorTextButtonDark,
             ),
             ContainerShapeDecorationComponent(
               pathImage: 'assets/images/github.png',
-              width: 50,
-              height: 50,
+              width: 40,
+              height: 40,
               color: ColorPalette.colorLight,
             ),
 

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:my_portifolio/src/theme/color_palette.dart';
-import 'package:my_portifolio/src/utils/responsive.dart';
+import 'package:my_portifolio/src/utils/utils_methods.dart';
 
 class CardWork extends StatelessWidget {
   final String pathLogo;
@@ -19,51 +19,62 @@ class CardWork extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: Responsive.getPadding(context),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Row(
-            children: [
-              Expanded(
-                flex: 2,
-                child: Wrap(
-                  spacing: 5,
-                  children: [
-                    Icon(
-                      FontAwesomeIcons.businessTime,
-                      color: ColorPalette.colorOrangeGradiente,
-                    ).paddingOnly(right: 10),
-                    Text(
-                      company,
-                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                            color: ColorPalette.colorLight,
-                            fontWeight: FontWeight.bold,
-                          ),
-                    ),
-                  ],
-                ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Row(
+          children: [
+            Expanded(
+              flex: 2,
+              child: Wrap(
+                spacing: 5,
+                children: [
+                  Icon(
+                    FontAwesomeIcons.businessTime,
+                    color: ColorPalette.colorOrangeGradiente,
+                  ).paddingOnly(right: 10),
+                  Text(
+                    company,
+                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                          color: ColorPalette.colorLight,
+                          fontWeight: FontWeight.bold,
+                        ),
+                  ),
+                ],
               ),
-              Text(
-                durationMothYear,
-                style: Theme.of(context)
-                    .textTheme
-                    .bodySmall!
-                    .copyWith(color: ColorPalette.colorTextSecondary),
+            ),
+            Text(
+              durationMothYear,
+              style: Theme.of(context)
+                  .textTheme
+                  .bodySmall!
+                  .copyWith(color: ColorPalette.colorTextSecondary),
+            )
+          ],
+        ).paddingOnly(bottom: 23),
+        Text(
+          description,
+          textAlign: TextAlign.justify,
+          style:
+              Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 14.49),
+        ),
+        pathLogo != ''
+            ? MouseRegion(
+                cursor: SystemMouseCursors.click,
+                child: GestureDetector(
+                  onTap: () {
+                    launchURL(pathLogo);
+                  },
+                  child: Text(
+                      'Cliquei para visualizar - Certificado de Registro de Programa de Computador',
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodySmall!
+                          .copyWith(color: Colors.green)),
+                ),
               )
-            ],
-          ).paddingOnly(bottom: 23),
-          Text(
-            description,
-            textAlign: TextAlign.justify,
-            style: Theme.of(context)
-                .textTheme
-                .bodyMedium!
-                .copyWith(fontSize: 14.49),
-          ),
-        ],
-      ),
+            : Container(),
+      ],
     ).paddingOnly(bottom: 50);
   }
 }

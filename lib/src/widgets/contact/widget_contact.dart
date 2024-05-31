@@ -3,6 +3,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:my_portifolio/src/theme/color_palette.dart';
 import 'package:my_portifolio/src/utils/responsive.dart';
+import 'package:my_portifolio/src/utils/utils_methods.dart';
+import 'package:my_portifolio/src/widgets/contact/widgets/row_icon_text.dart';
 
 class Contact extends StatefulWidget {
   const Contact({super.key});
@@ -22,61 +24,45 @@ class _ContactState extends State<Contact> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text(
-            'Contato',
+            'Entre em contato',
             style: Theme.of(context).textTheme.titleMedium,
-          ).paddingOnly(top: 83.73, bottom: 34.37),
+          ).paddingOnly(top: 50.73, bottom: 20.37),
           Text(
-            'Sou Weberth Erik, recém-formado em Sistemas de Informação pela UNITINS, especializado em desenvolvimento móvel com Flutter e com experiência em Flutter, Laravel e Django. Trabalhei em projetos significativos, como o UNITINSRECICLA, e atualmente sou desenvolvedor FullStack(Django/Flutter). E estou sempre em busca de novos desafios no desenvolvimento de software.',
+            'Estou sempre em busca de novos desafios e oportunidades para colaborar em projetos inovadores. Se você está à procura de um desenvolvedor apaixonado e dedicado, que pode trazer suas ideias à vida com soluções criativas e eficazes, adoraria conversar com você! Seja para discutir um projeto, trocar ideias sobre desenvolvimento de software ou apenas para uma conversa sobre as tendências do setor, sinta-se à vontade para entrar em contato. Estou aqui para ajudar a transformar suas visões em realidade!',
             style: Theme.of(context).textTheme.bodySmall,
           ),
           const SizedBox(
             height: 10,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Icon(
-                Icons.email,
-                color: ColorPalette.colorOrangeGradiente,
-              ).paddingOnly(right: 10),
-              Text(
-                "webertherikanolarsirqueira@gmail.com",
-                style: Theme.of(context)
-                    .textTheme
-                    .bodySmall!
-                    .copyWith(color: ColorPalette.colorLight),
-              ),
-            ],
-          ).paddingOnly(bottom: 41.25),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              IconButton(
-                icon: Icon(
-                  FontAwesomeIcons.instagram,
-                  color: ColorPalette.colorLight,
-                ),
-                onPressed: () {},
-              ),
-              IconButton(
-                icon: Icon(
-                  FontAwesomeIcons.linkedin,
-                  color: ColorPalette.colorLight,
-                ),
-                onPressed: () {},
-              ),
-            ],
+          const RowIconText(
+            url: 'https://www.linkedin.com/in/weberth-e-949388138/',
+            text: 'Weberth_Erik',
+            iconData: FontAwesomeIcons.linkedin,
           ),
-          TextButton(
-            onPressed: () {},
-            child: Text(
-              'Visualizar template no FIGMA - Todos os direitos',
-              style: Theme.of(context)
-                  .textTheme
-                  .bodySmall!
-                  .copyWith(color: Colors.green),
+          const RowIconText(
+            url: 'https://www.instagram.com/weberth_erik/',
+            text: '@weberth_erik',
+            iconData: FontAwesomeIcons.instagram,
+          ),
+          const RowIconText(
+            url: '',
+            text: 'webertherikanolarsirqueira@gmail.com',
+            iconData: Icons.email,
+          ),
+          MouseRegion(
+            cursor: SystemMouseCursors.click,
+            child: GestureDetector(
+              onTap: () {
+                launchURL(
+                    'https://www.figma.com/design/aIAZwsQqkT6XxgNzwkjS3y/Developer-Portfolio-Website-Design-(Community)?node-id=0-1&t=YHqSrznVXREwLUb0-0');
+              },
+              child: Text('Visualizar template no FIGMA - Todos os direitos',
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodySmall!
+                      .copyWith(color: Colors.green)),
             ),
-          ),
+          )
         ],
       ),
     );

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:my_portifolio/src/utils/responsive.dart';
 
-import '../../../utils/general_settings.dart';
+import '../../../utils/utils_methods.dart';
 
 class TextButtonOptions extends StatelessWidget {
   final String text;

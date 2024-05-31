@@ -18,7 +18,7 @@ class AppTextStyles {
 
   static TextStyle get smallText => TextStyle(
         fontFamily: 'Poppins',
-        fontSize: 14.12,
+        fontSize: 13,
         fontWeight: FontWeight.normal,
         color: ColorPalette.colorTextSecondary,
       );
@@ -34,6 +34,6 @@ class AppTextStyles {
   //       fontFamily: 'Poppins',
   //       fontSize: 18,
   //       fontWeight: FontWeight.bold,
-  //       color: ColorPalette.colorLight,
+  //       color: ColorPaletteDark.colorLight,
   //     );
 }

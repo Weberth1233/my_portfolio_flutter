@@ -24,10 +24,18 @@ class Responsive extends StatelessWidget {
   static EdgeInsets getPadding(BuildContext context) {
     return EdgeInsets.symmetric(
         horizontal: isDesktop(context)
-            ? 319.17
-            : isMobile(context)
-                ? 10
-                : 50);
+            ? 210
+            : isTablet(context)
+                ? 20
+                : 10);
+  }
+
+  static double getSizeCard(BuildContext context) {
+    return isTablet(context)
+        ? 300
+        : isMobile(context)
+            ? 330
+            : 450;
   }
 
   @override

@@ -23,13 +23,11 @@ class MyCustomMenuDesktop extends StatelessWidget {
             flex: 2,
             child: Container(
                 alignment: Alignment.center,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(0),
-                    gradient: ColorPalette.colorGradiente),
                 child: Text(
-                  'Portifolio Weberth'.toUpperCase(),
+                  'Portfólio//Weberth'.toUpperCase(),
                   style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                      color: Colors.white, fontWeight: FontWeight.w500),
+                      color: ColorPalette.colorOrangeGradiente,
+                      fontWeight: FontWeight.w600),
                 )),
           ),
           Expanded(

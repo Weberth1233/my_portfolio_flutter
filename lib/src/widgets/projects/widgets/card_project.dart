@@ -1,19 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:lottie/lottie.dart';
+import 'package:get/get.dart';
 import 'package:my_portifolio/src/components/icon_button_component.dart';
 import 'package:my_portifolio/src/theme/color_palette.dart';
+import 'package:my_portifolio/src/utils/responsive.dart';
 
 class CardProject extends StatelessWidget {
   final String text;
   final String pathImage;
-  final VoidCallback action;
+  final VoidCallback? actionGit;
+  final VoidCallback? actionFigma;
+  final VoidCallback? actionLink;
 
   const CardProject({
     super.key,
     required this.text,
     required this.pathImage,
-    required this.action,
+    this.actionGit,
+    this.actionFigma,
+    this.actionLink,
   });
 
   @override
@@ -21,46 +26,66 @@ class CardProject extends StatelessWidget {
     return Column(
       children: [
         Container(
-          width: 390,
+          width: Responsive.getSizeCard(context),
           height: 235,
-          child: Lottie.asset(
-            'assets/animation/desktop.json',
-            fit: BoxFit.fill,
-            repeat: true,
+          decoration: BoxDecoration(
+            borderRadius: const BorderRadius.only(
+              topLeft: Radius.circular(20),
+              topRight: Radius.circular(20),
+            ),
+            color: ColorPalette.colorPrimary,
+            image: DecorationImage(
+              image: AssetImage(pathImage),
+              fit: BoxFit
+                  .cover, // Certifique-se de que a imagem se encaixa no contêiner
+            ),
           ),
         ),
         Container(
-          width: 390,
-          height: 70,
+          width: Responsive.getSizeCard(context),
           decoration: BoxDecoration(
             color: ColorPalette.colorAppBar,
             borderRadius: const BorderRadius.only(
-                bottomLeft: Radius.circular(20),
-                bottomRight: Radius.circular(20)),
+              bottomLeft: Radius.circular(20),
+              bottomRight: Radius.circular(20),
+            ),
           ),
           child: Container(
-            padding: const EdgeInsetsDirectional.symmetric(
-                horizontal: 23, vertical: 14),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            padding: const EdgeInsets.symmetric(
+              horizontal: 18,
+              vertical: 14,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Text>[
-                    Text(
-                      'Clique aqui para visualizar',
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodySmall!
-                          .copyWith(fontSize: 10),
-                    ),
-                    Text(text, style: Theme.of(context).textTheme.bodyMedium),
-                  ],
+                Text(
+                    Responsive.isDesktop(context)
+                        ? 'Clique nos links para saber mais...'
+                        : 'Role para o lado para ver mais...',
+                    style: Theme.of(context).textTheme.bodySmall),
+                Text(
+                  text,
+                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                      color: ColorPalette.colorLight,
+                      fontWeight: FontWeight.w600),
                 ),
-                IconButtonComponent(
-                  icon: FontAwesomeIcons.github,
-                  action: action,
-                ),
+                actionLink == null
+                    ? Row(
+                        children: <IconButtonComponent>[
+                          IconButtonComponent(
+                            icon: FontAwesomeIcons.github,
+                            action: actionGit!,
+                          ),
+                          IconButtonComponent(
+                            icon: FontAwesomeIcons.figma,
+                            action: actionFigma!,
+                          ),
+                        ],
+                      )
+                    : IconButtonComponent(
+                        icon: FontAwesomeIcons.link,
+                        action: actionLink!,
+                      ),
               ],
             ),
           ),
