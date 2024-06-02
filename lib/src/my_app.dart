@@ -22,7 +22,7 @@ class _MyAppState extends State<MyApp> {
       builder: (context, child) {
         final appTheme = AppTheme(isLight: controllerTheme.themeLight.value);
         return MaterialApp(
-          title: 'Meu portifolio',
+          title: 'Meu portfólio',
           debugShowCheckedModeBanner: false,
           theme: controllerTheme.themeLight.value
               ? appTheme.lightTheme
