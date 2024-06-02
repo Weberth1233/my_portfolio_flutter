@@ -57,7 +57,7 @@ class GlobalScaffold extends StatelessWidget {
       appBar: Responsive.isMobile(context)
           ? AppBar(
               title: Text(
-                'Portifolio Weberth',
+                'Portfólio Weberth',
                 style: Theme.of(context)
                     .textTheme
                     .bodySmall!
