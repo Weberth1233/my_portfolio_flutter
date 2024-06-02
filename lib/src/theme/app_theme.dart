@@ -42,10 +42,10 @@ class AppTheme {
   ThemeData get darkTheme {
     return ThemeData(
         brightness: Brightness.dark,
-        primaryColor: ColorPalette.colorPrimary,
-        cardColor: ColorPalette.colorCard,
+        primaryColor: ColorPaletteDark.colorPrimary,
+        cardColor: ColorPaletteDark.colorCard,
         appBarTheme: AppBarTheme(
-          backgroundColor: ColorPalette.colorAppBar,
+          backgroundColor: ColorPaletteDark.colorAppBar,
         ),
         textTheme: TextTheme(
             displayLarge: appTextStyle.headline1,
@@ -56,11 +56,11 @@ class AppTheme {
         outlinedButtonTheme: OutlinedButtonThemeData(
           style: ButtonStyle(
             backgroundColor: WidgetStateProperty.all<Color>(
-                ColorPalette.colorButton), // Cor de fundo
-            foregroundColor:
-                WidgetStateProperty.all<Color>(ColorPalette.colorTextButton),
+                ColorPaletteDark.colorButton), // Cor de fundo
+            foregroundColor: WidgetStateProperty.all<Color>(
+                ColorPaletteDark.colorTextButton),
             side: WidgetStateProperty.all<BorderSide>(
-              BorderSide(color: ColorPalette.colorLight), // Cor da borda
+              BorderSide(color: ColorPaletteDark.colorLight), // Cor da borda
             ),
           ),
         )

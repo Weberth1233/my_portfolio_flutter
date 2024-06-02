@@ -36,10 +36,8 @@ class _HomeState extends State<Home> {
                 children: <TextSpan>[
                   TextSpan(
                       text: ' Flutter',
-                      style: Theme.of(context)
-                          .textTheme
-                          .displayLarge!
-                          .copyWith(color: ColorPalette.colorOrangeGradiente)),
+                      style: Theme.of(context).textTheme.displayLarge!.copyWith(
+                          color: ColorPaletteDark.colorOrangeGradiente)),
                 ]),
           ),
         ).paddingOnly(bottom: 39),

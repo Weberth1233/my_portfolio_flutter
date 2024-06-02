@@ -5,7 +5,6 @@ import 'package:my_portifolio/src/widgets/global_scaffold.dart';
 import 'package:my_portifolio/src/widgets/projects/widget_projects.dart';
 import 'package:my_portifolio/src/widgets/works/widget_works.dart';
 import 'package:my_portifolio/src/widgets/home/widget_home.dart';
-
 import '../controllers/controller_theme.dart';
 
 class MyHomePage extends StatelessWidget {

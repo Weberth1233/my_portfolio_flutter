@@ -10,7 +10,7 @@ class CircularImage extends StatelessWidget {
       width: 213,
       height: 213,
       decoration: ShapeDecoration(
-        gradient: ColorPalette.colorGradiente,
+        gradient: ColorPaletteDark.colorGradiente,
         image: const DecorationImage(
           alignment: Alignment.center,
           image: AssetImage('assets/images/emoji3.png'),

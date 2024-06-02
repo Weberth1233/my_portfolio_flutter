@@ -30,7 +30,7 @@ class MyCustomMenuDesktop extends StatelessWidget {
               child: Text(
                 'Portfólio//Weberth'.toUpperCase(),
                 style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                    color: ColorPalette.colorOrangeGradiente,
+                    color: ColorPaletteDark.colorOrangeGradiente,
                     fontWeight: FontWeight.w600),
               )),
           OptionMenu(

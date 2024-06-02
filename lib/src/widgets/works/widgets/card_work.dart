@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:my_portifolio/src/theme/color_palette.dart';
+import 'package:my_portifolio/src/utils/responsive.dart';
 import 'package:my_portifolio/src/utils/utils_methods.dart';
 
 class CardWork extends StatelessWidget {
@@ -31,13 +32,17 @@ class CardWork extends StatelessWidget {
                 children: [
                   Icon(
                     FontAwesomeIcons.businessTime,
-                    color: ColorPalette.colorOrangeGradiente,
+                    color: ColorPaletteDark.colorOrangeGradiente,
                   ).paddingOnly(right: 10),
                   Text(
                     company,
-                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                          fontWeight: FontWeight.bold,
-                        ),
+                    style: Responsive.isMobile(context)
+                        ? Theme.of(context).textTheme.bodySmall!.copyWith(
+                              fontWeight: FontWeight.bold,
+                            )
+                        : Theme.of(context).textTheme.bodyMedium!.copyWith(
+                              fontWeight: FontWeight.bold,
+                            ),
                   ),
                 ],
               ),

@@ -1,3 +1,4 @@
+import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:my_portifolio/src/utils/utils_methods.dart';
 import '../widgets/card_project.dart';
 
@@ -22,6 +23,7 @@ List<CardProject> cards = [
     actionFigma: () {
       launchURL(urlFigmatakeYourUmbrellaApp);
     },
+    endCard: false,
   ),
   CardProject(
     pathImage: 'assets/images/swift-vagalumes.png',
@@ -32,6 +34,7 @@ List<CardProject> cards = [
     actionFigma: () {
       launchURL(urlFigmaAppMusic);
     },
+    endCard: false,
   ),
   CardProject(
     pathImage: 'assets/images/pokedex.png',
@@ -42,5 +45,6 @@ List<CardProject> cards = [
     actionFigma: () {
       launchURL(urlFigmaPokedex);
     },
+    endCard: true,
   ),
 ];

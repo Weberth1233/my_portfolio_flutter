@@ -27,7 +27,7 @@ class RowIconText extends StatelessWidget {
               : Clipboard.setData(ClipboardData(text: text));
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-                backgroundColor: ColorPalette.colorOrangeGradiente,
+                backgroundColor: ColorPaletteDark.colorOrangeGradiente,
                 content:
                     const Text("Email copiado para a área de transferência")),
           );
@@ -37,7 +37,7 @@ class RowIconText extends StatelessWidget {
           children: [
             Icon(
               iconData,
-              color: ColorPalette.colorOrangeGradiente,
+              color: ColorPaletteDark.colorOrangeGradiente,
             ).paddingOnly(right: 10),
             Text(text, style: Theme.of(context).textTheme.bodySmall),
           ],

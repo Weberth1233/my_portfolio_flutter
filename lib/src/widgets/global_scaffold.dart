@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:my_portifolio/src/components/icon_button_component.dart';
 import '../controllers/controller_theme.dart';
 import '../utils/responsive.dart';
@@ -35,12 +36,16 @@ class GlobalScaffold extends StatelessWidget {
         myKey: keyHome,
       ),
       TextButtonOptions(
+        text: 'Conhecimentos',
+        myKey: keyExperience,
+      ),
+      TextButtonOptions(
         text: 'Projetos',
         myKey: keyProjects,
       ),
       TextButtonOptions(
         text: 'Experiências',
-        myKey: keyExperience, // Corrigido para keyExperience
+        myKey: keyWorks, // Corrigido para keyExperience
       ),
       TextButtonOptions(
         text: 'Contatos',
@@ -85,7 +90,7 @@ class GlobalScaffold extends StatelessWidget {
               return TextButtonOptions(
                 text: option.text,
                 myKey: option.myKey,
-              );
+              ).paddingOnly(bottom: 20);
             }).toList(), // Usando map ao invés de List.generate
           ),
         ),

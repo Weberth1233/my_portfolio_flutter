@@ -18,50 +18,51 @@ class Experience extends StatelessWidget {
           height: 48,
         ),
         Wrap(
+          alignment: WrapAlignment.center,
           spacing: 30,
           runSpacing: 20,
           children: <ContainerShapeDecorationComponent>[
-            ContainerShapeDecorationComponent(
+            const ContainerShapeDecorationComponent(
               pathImage: 'assets/images/django.png',
               width: 40,
               height: 40,
-              color: ColorPalette.colorLight,
+              color: Colors.transparent,
             ),
-            ContainerShapeDecorationComponent(
+            const ContainerShapeDecorationComponent(
               pathImage: 'assets/images/java.png',
               width: 40,
               height: 40,
-              color: ColorPalette.colorTextButtonDark,
+              color: Colors.transparent,
             ),
-            ContainerShapeDecorationComponent(
+            const ContainerShapeDecorationComponent(
               pathImage: 'assets/images/flutter.png',
               width: 40,
               height: 40,
-              color: ColorPalette.colorTextButtonDark,
+              color: Colors.transparent,
             ),
-            ContainerShapeDecorationComponent(
+            const ContainerShapeDecorationComponent(
               pathImage: 'assets/images/html.jpg',
               width: 40,
               height: 40,
-              color: ColorPalette.colorTextButtonDark,
+              color: Colors.transparent,
             ),
-            ContainerShapeDecorationComponent(
+            const ContainerShapeDecorationComponent(
               pathImage: 'assets/images/css.png',
               width: 40,
               height: 40,
-              color: ColorPalette.colorTextButtonDark,
+              color: Colors.transparent,
             ),
-            ContainerShapeDecorationComponent(
+            const ContainerShapeDecorationComponent(
               pathImage: 'assets/images/javascript.png',
               width: 40,
               height: 40,
-              color: ColorPalette.colorTextButtonDark,
+              color: Colors.transparent,
             ),
             ContainerShapeDecorationComponent(
               pathImage: 'assets/images/github.png',
               width: 40,
               height: 40,
-              color: ColorPalette.colorLight,
+              color: ColorPaletteDark.colorLight,
             ),
           ],
         ),

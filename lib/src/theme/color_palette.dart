@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class ColorPalette {
+class ColorPaletteDark {
   static Color get colorPrimary => const Color(0xff161513);
 
   static Color get colorTextSecondary => const Color(0xffC5C5C5);
@@ -38,6 +38,8 @@ class ColorPaletteLight {
 
   static Color get colorAppBar => const Color(0xffF2F2F2);
   static Color get colorCard => const Color(0xffF2F2F2);
+
+  static Color get colorText => colorPrimary;
 
   static Color get colorButton => colorPrimary;
   static Color get colorTextButton => colorLight;

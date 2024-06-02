@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:get/get.dart';
 import 'package:my_portifolio/src/components/icon_button_component.dart';
 import 'package:my_portifolio/src/theme/color_palette.dart';
 import 'package:my_portifolio/src/utils/responsive.dart';
@@ -11,6 +10,7 @@ class CardProject extends StatelessWidget {
   final VoidCallback? actionGit;
   final VoidCallback? actionFigma;
   final VoidCallback? actionLink;
+  final bool? endCard;
 
   const CardProject({
     super.key,
@@ -19,6 +19,7 @@ class CardProject extends StatelessWidget {
     this.actionGit,
     this.actionFigma,
     this.actionLink,
+    this.endCard = false,
   });
 
   @override
@@ -60,17 +61,19 @@ class CardProject extends StatelessWidget {
                 Text(
                     Responsive.isDesktop(context)
                         ? 'Clique nos links para saber mais...'
-                        : 'Role para o lado para ver mais...',
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodySmall!
-                        .copyWith(fontStyle: FontStyle.italic, fontSize: 10)),
+                        : endCard == true
+                            ? 'Último card...'
+                            : 'Role para o lado para ver mais...',
+                    style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                        fontStyle: FontStyle.italic,
+                        fontSize: 10,
+                        color: ColorPaletteLight.colorOrangeGradiente)),
                 Text(
                   text,
                   style: Theme.of(context)
                       .textTheme
                       .bodyMedium!
-                      .copyWith(fontWeight: FontWeight.w500),
+                      .copyWith(fontWeight: FontWeight.w600),
                 ),
                 actionLink == null
                     ? Row(

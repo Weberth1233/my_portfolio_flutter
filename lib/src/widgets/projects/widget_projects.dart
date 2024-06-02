@@ -25,7 +25,7 @@ class _ProjectsState extends State<Projects> {
             style: Theme.of(context)
                 .textTheme
                 .titleMedium!
-                .copyWith(color: ColorPalette.colorOrangeGradiente),
+                .copyWith(color: ColorPaletteDark.colorOrangeGradiente),
           ),
           const SizedBox(
             height: 57,
@@ -44,6 +44,7 @@ class _ProjectsState extends State<Projects> {
                             pathImage: cards[index].pathImage,
                             actionGit: cards[index].actionGit,
                             actionFigma: cards[index].actionFigma,
+                            endCard: cards[index].endCard,
                           ).paddingOnly(left: 10);
                         },
                       ),
@@ -51,7 +52,7 @@ class _ProjectsState extends State<Projects> {
                   )
                 : Wrap(
                     spacing: 120,
-                    runSpacing: 20,
+                    runSpacing: 50,
                     children: List.generate(
                       cards.length,
                       (index) {

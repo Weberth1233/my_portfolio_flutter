@@ -24,7 +24,7 @@ class _ContactState extends State<Contact> {
       width: MediaQuery.of(context).size.width,
       color: widget.controllerTheme.themeLight.value
           ? ColorPaletteLight.colorFooter
-          : ColorPalette.colorFooter,
+          : ColorPaletteDark.colorAppBar,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[

@@ -10,34 +10,42 @@ class AppTextStyles {
         fontFamily: 'Poppins',
         fontSize: 55,
         fontWeight: FontWeight.bold,
-        color: isLightTheme ? Colors.black : ColorPalette.colorLight,
+        color: isLightTheme
+            ? ColorPaletteLight.colorText
+            : ColorPaletteDark.colorLight,
       );
 
   TextStyle get mediumText => TextStyle(
         fontFamily: 'Poppins',
         fontSize: 18,
         fontWeight: FontWeight.normal,
-        color: isLightTheme ? Colors.black : ColorPalette.colorTextSecondary,
+        color: isLightTheme
+            ? ColorPaletteLight.colorText
+            : ColorPaletteDark.colorTextSecondary,
       );
 
   TextStyle get smallText => TextStyle(
         fontFamily: 'Poppins',
         fontSize: 13,
         fontWeight: FontWeight.normal,
-        color: isLightTheme ? Colors.black : ColorPalette.colorTextSecondary,
+        color: isLightTheme
+            ? ColorPaletteLight.colorText
+            : ColorPaletteDark.colorTextSecondary,
       );
 
   TextStyle get subtitleText => TextStyle(
         fontFamily: 'Poppins',
         fontSize: 22,
         fontWeight: FontWeight.bold,
-        color: isLightTheme ? Colors.black : ColorPalette.colorLight,
+        color: isLightTheme
+            ? ColorPaletteLight.colorText
+            : ColorPaletteDark.colorLight,
       );
 
   // static TextStyle get labelTextMedium => TextStyle(
   //       fontFamily: 'Poppins',
   //       fontSize: 18,
   //       fontWeight: FontWeight.bold,
-  //       color: ColorPaletteDark.colorLight,
+  //       color: ColorPaletteDarkDark.colorLight,
   //     );
 }

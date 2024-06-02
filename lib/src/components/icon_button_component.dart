@@ -17,7 +17,7 @@ class IconButtonComponent extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       icon: Icon(icon),
-      color: ColorPalette.colorOrangeGradiente,
+      color: ColorPaletteDark.colorOrangeGradiente,
       onPressed: action,
     ).paddingOnly(right: padding);
   }
